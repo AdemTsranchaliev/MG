@@ -1,0 +1,30 @@
+﻿
+@model List<User>
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<User> userManager
+@{
+    ViewData["Title"] = "Users";
+}
+
+<div>
+    <h4>CreateRoleViewModel</h4>
+    <hr />
+    @foreach (var item in Model) {
+
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayFor(modelItem => item.UserName)
+        </dt>
+        <dd class = "col-sm-2">
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </dd>
+         <dd class = "col-sm-2">
+            @Html.DisplayFor( modelItem => item.UserRole)
+        </dd>
+    </dl>
+    }
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
